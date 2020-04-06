@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="distance">Distance</string>
+    <string name="energy">Energy</string>
+    <string name="search">Search</string>
+    <string name="hectares">Hectares</string>
+    <string name="m2">M²</string>
+    <string name="areaType">Area Type</string>
+</resources>

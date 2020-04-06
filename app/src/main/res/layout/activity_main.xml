@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/distancy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="0.0"
+        android:hint="@string/distance"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/areaType" />
+
+
+    <RadioGroup
+        android:id="@+id/typeDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/m2">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hectares"
+            android:text="@string/hectares"
+            android:id="@+id/hectares"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/m2"
+            android:text="@string/m2"
+            android:id="@+id/m2"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/energy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="0.0"
+        android:hint="@string/energy"
+        android:inputType="numberDecimal" />
+
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="@string/search" />
+</LinearLayout>
