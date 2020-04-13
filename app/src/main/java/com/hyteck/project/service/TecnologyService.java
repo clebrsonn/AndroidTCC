@@ -21,7 +21,7 @@ public class TecnologyService {
 
     private static final double HEC_M = 10000;
 
-    private static final String BASE_URL = "http://10.0.0.6:8080/";
+    private static final String BASE_URL = "https://tcc-hyteck.herokuapp.com/";
     private List<Tecnology> technologies = new ArrayList<>();
 
 

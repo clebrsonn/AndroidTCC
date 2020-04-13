@@ -2,6 +2,7 @@ package com.hyteck.project.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.TextView;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,6 @@ public class Tecnology implements Parcelable {
     private String distance;
     private String energyConsumption;
     private String batery;
-//    private List<DataRate> dataRates;
 
     @Override
     public int describeContents() {

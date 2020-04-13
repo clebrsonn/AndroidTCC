@@ -16,6 +16,8 @@ import com.hyteck.project.entity.Tecnology;
 import com.hyteck.project.entity.TecnologyAdapter;
 import com.hyteck.project.service.TecnologyService;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,26 +43,25 @@ public class ResultActivit extends AppCompatActivity {
         assert searchOptions != null;
         TecnologyService tecnologyService = new TecnologyService();
         final TecnologyApi tecnologyApi = tecnologyService.calculateTecnologies(searchOptions);
-        final Call<List<Tecnology>> callApi = tecnologyApi.list();
+        final Call<List<Tecnology>> callApi = tecnologyApi.search(searchOptions);
 
 
-        callApi(callApi, getApplicationContext());
+        callApi(callApi);
     }
 
-    private void callApi(Call<List<Tecnology>> callApi, Context context) {
+    private void callApi(Call<List<Tecnology>> callApi) {
         callApi.enqueue(new Callback<List<Tecnology>>() {
             @Override
-            public void onResponse(Call<List<Tecnology>> call, Response<List<Tecnology>> response) {
+            public void onResponse(@NotNull Call<List<Tecnology>> call, @NotNull Response<List<Tecnology>> response) {
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     tecnologies = response.body();
 
-//                    Context context = getApplicationContext();
                     RecyclerView recyclerView = findViewById(R.id.list);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
                     recyclerView.setAdapter(new TecnologyAdapter(tecnologies));
 
-//                    Toast.makeText(getApplicationContext(), response.body().toString(), Toast.LENGTH_LONG).show();
                     progress.setVisibility(View.INVISIBLE);
                 }
             }
@@ -72,21 +73,5 @@ public class ResultActivit extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-    }
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(Tecnology item);
     }
 }

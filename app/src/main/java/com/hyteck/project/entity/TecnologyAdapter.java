@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hyteck.project.R;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import lombok.Getter;
@@ -24,6 +26,7 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
         mValues = items;
     }
 
+    @NotNull
     @Override
     public TecnologyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -32,7 +35,7 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
     }
 
     @Override
-    public void onBindViewHolder(final TecnologyViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull final TecnologyViewHolder holder, int position) {
         if(mValues.get(position)!=null) {
             holder.mItem = mValues.get(position);
             holder.name.setText(mValues.get(position).getName());
@@ -41,7 +44,6 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
             holder.distance.setText(mValues.get(position).getDistance());
             holder.energyConsumption.setText(mValues.get(position).getEnergyConsumption());
         }
-
     }
 
     @Override
@@ -50,8 +52,8 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
     }
 
     public class TecnologyViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public Tecnology mItem;
+        private final View mView;
+        private Tecnology mItem;
 
         private final TextView name;
         private final TextView distance;
@@ -59,7 +61,7 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
         private final TextView batery;
 
 
-        public TecnologyViewHolder(View view) {
+        TecnologyViewHolder(View view) {
             super(view);
             mView = view;
             name = itemView.findViewById(R.id.tecnologyName);
