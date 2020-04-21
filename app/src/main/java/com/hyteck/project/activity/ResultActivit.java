@@ -1,12 +1,14 @@
 package com.hyteck.project.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,8 +44,14 @@ public class ResultActivit extends AppCompatActivity {
         progress.setVisibility(View.VISIBLE);
         final SearchOptions searchOptions = intent.getParcelableExtra("searchOptions");
         assert searchOptions != null;
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        boolean urlPrd = sharedPreferences.getBoolean("url_prd", false);
+
+
+
         TecnologyService tecnologyService = new TecnologyService();
-        final TecnologyApi tecnologyApi = tecnologyService.calculateTecnologies(searchOptions);
+        final TecnologyApi tecnologyApi = tecnologyService.calculateTecnologies(searchOptions, urlPrd);
         final Call<List<Tecnology>> callApi = tecnologyApi.search(searchOptions);
 
 

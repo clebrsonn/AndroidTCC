@@ -20,17 +20,19 @@ public class TecnologyService {
     private static final String BASE_URL = "http://10.0.0.6:8080/";
     private static final String BASE_URL_PROD = "https://tcc-hyteck.herokuapp.com/";
 
-    public TecnologyApi calculateTecnologies(SearchOptions searchOptions) {
+    public TecnologyApi calculateTecnologies(SearchOptions searchOptions, boolean urlPrd) {
+
+
+        String url = urlPrd ? BASE_URL_PROD :BASE_URL;
 
         if (searchOptions.getOptions() != null && searchOptions.getOptions().containsKey("hectares")) {
             searchOptions.getOptions().remove("hectares");
             final double distancy = Double.parseDouble(Objects.requireNonNull(searchOptions.getOptions().get("distance"))) * HEC_M;
             searchOptions.getOptions().replace("distance", String.valueOf(distancy));
         }
-        ;
         assert searchOptions.getOptions() != null;
         searchOptions.getOptions().remove("M2");
-        return start(TecnologyApi.class, BASE_URL_PROD);
+        return start(TecnologyApi.class,url);
     }
 
     public static <S> S start(Class<S> serviceClass, String url) {

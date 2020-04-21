@@ -2,11 +2,14 @@ package com.hyteck.project.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hyteck.project.R;
@@ -48,4 +51,20 @@ public class MainActivity extends AppCompatActivity {
         final RadioGroup mTypeDistanceGroup = findViewById(R.id.typeDistance);
         mTypeDistance = findViewById(mTypeDistanceGroup.getCheckedRadioButtonId());
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.settings_menu) {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
 }
