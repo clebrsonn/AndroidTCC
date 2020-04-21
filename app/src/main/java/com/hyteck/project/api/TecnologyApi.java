@@ -8,13 +8,14 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface TecnologyApi {
 
     @GET("tecnologies")
     Call<List<Tecnology>> list();
 
-    @GET("search")
+    @POST("tecnologies/search")
     Call<List<Tecnology>> search(@Body SearchOptions searchOptions);
 
 }

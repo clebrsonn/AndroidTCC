@@ -31,14 +31,14 @@
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hectares"
+            android:hint="@string/hectaresHint"
             android:text="@string/hectares"
             android:id="@+id/hectares"/>
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/m2"
+            android:hint="@string/m2Hint"
             android:text="@string/m2"
             android:id="@+id/m2"/>
     </RadioGroup>
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="0.0"
-        android:hint="@string/energy"
+        android:hint="@string/energyConsumption"
         android:inputType="numberDecimal" />
 
 

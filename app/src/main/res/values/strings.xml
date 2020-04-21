@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Project</string>
-    <string name="distance">Distance</string>
-    <string name="energy">Energy</string>
+    <string name="distance">distance</string>
+    <string name="energyConsumption">energyConsumption</string>
     <string name="search">Search</string>
     <string name="hectares">Hectares</string>
     <string name="m2">M²</string>
+    <string name="hectaresHint">hectares</string>
+    <string name="m2Hint">M2</string>
+
     <string name="areaType">Area Type</string>
 </resources>
