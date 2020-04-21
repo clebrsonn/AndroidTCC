@@ -2,7 +2,7 @@ package com.hyteck.project.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.hyteck.project.SearchOptions;
+import com.hyteck.project.entity.SearchOptions;
 import com.hyteck.project.api.TecnologyApi;
 
 import java.util.Objects;

@@ -4,7 +4,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivit"
+    tools:context=".activity.ResultActivit"
     android:orientation="vertical">
 
     <ProgressBar
@@ -27,7 +27,7 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".ItemFragment"
-        tools:listitem="@layout/fragment_item" />
+        tools:listitem="@layout/tecnology_item_list" />
 
 
 </LinearLayout>

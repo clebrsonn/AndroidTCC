@@ -1,6 +1,5 @@
-package com.hyteck.project;
+package com.hyteck.project.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hyteck.project.R;
+import com.hyteck.project.adapter.TecnologyAdapter;
 import com.hyteck.project.api.TecnologyApi;
+import com.hyteck.project.entity.SearchOptions;
 import com.hyteck.project.entity.Tecnology;
-import com.hyteck.project.entity.TecnologyAdapter;
 import com.hyteck.project.service.TecnologyService;
 
 import org.jetbrains.annotations.NotNull;

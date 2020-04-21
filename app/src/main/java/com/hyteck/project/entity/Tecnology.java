@@ -2,7 +2,6 @@ package com.hyteck.project.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.TextView;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.hyteck.project;
+package com.hyteck.project.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;

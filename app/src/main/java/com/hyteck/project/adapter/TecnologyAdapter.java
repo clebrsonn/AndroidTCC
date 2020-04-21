@@ -1,4 +1,4 @@
-package com.hyteck.project.entity;
+package com.hyteck.project.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hyteck.project.R;
+import com.hyteck.project.entity.Tecnology;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -30,7 +31,7 @@ public class TecnologyAdapter extends RecyclerView.Adapter<TecnologyAdapter.Tecn
     @Override
     public TecnologyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_item, parent, false);
+                .inflate(R.layout.tecnology_item_list, parent, false);
         return new TecnologyViewHolder(view);
     }
 

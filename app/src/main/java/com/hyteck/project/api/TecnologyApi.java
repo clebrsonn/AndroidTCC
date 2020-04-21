@@ -1,6 +1,6 @@
 package com.hyteck.project.api;
 
-import com.hyteck.project.SearchOptions;
+import com.hyteck.project.entity.SearchOptions;
 import com.hyteck.project.entity.Tecnology;
 
 import java.util.List;
